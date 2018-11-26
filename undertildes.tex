@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{stackengine}
+\stackMath
+\newcommand\tenq[2][1]{%
+ \def\useanchorwidth{T}%
+  \ifnum#1>1%
+    \stackunder[0pt]{\tenq[\numexpr#1-1\relax]{#2}}{\scriptscriptstyle\sim}%
+  \else%
+    \stackunder[1pt]{#2}{\scriptscriptstyle\sim}%
+  \fi%
+}
+\begin{document}
+\[
+\tenq{\sigma}\neq\tenq[2]{\Lambda}\neq\tenq[3]{\Delta}\neq\tenq[4]{\psi}
+\]
+
+\end{document}
